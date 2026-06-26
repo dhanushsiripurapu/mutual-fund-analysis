@@ -38,6 +38,30 @@ pd.read_csv(
     if_exists="replace",
     index=False
 )
+pd.read_csv(
+    "data/raw/05_category_inflows.csv"
+).to_sql(
+    "fact_category_inflows",
+    conn,
+    if_exists="replace",
+    index=False
+)
+pd.read_csv(
+    "data/raw/06_industry_folio_count.csv"
+).to_sql(
+    "fact_folio_count",
+    conn,
+    if_exists="replace",
+    index=False
+)
+pd.read_csv(
+    "data/raw/07_scheme_performance.csv"
+).to_sql(
+    "fact_scheme_performance",
+    conn,
+    if_exists="replace",
+    index=False
+)
 
 conn.close()
 
